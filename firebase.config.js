@@ -6,10 +6,10 @@ exports.uploadToFireStore = (data) => {
         admin.initializeApp({
             credential: admin.credential.cert(serviceAccount),
           });
-          const db = admin.firestore();
-          const productRef = db.collection("myproducts")
-          productRef.doc(data.id.toString()).set(data)
     }   
+    const db = admin.firestore();
+    const productRef = db.collection("myproducts")
+    productRef.doc(data.id.toString()).set(data)
 }
 
 
