@@ -1,0 +1,66 @@
+{
+  "name": "trade-depot-assessment",
+  "version": "2.0.0",
+  "main": "bin/www",
+  "author": "Omotosho Joseph <Joseph.omotosho98@gmail.com>",
+  "private": true,
+  "description": "[![CircleCI](https://circleci.com/gh/bondz/node-express-react-ts.svg?style=svg)](https://circleci.com/gh/bondz/node-express-react-ts)",
+  "scripts": {
+    "build": "scripts/build.sh",
+    "start": "nodemon ./src/server.js",
+    "test": "jest",
+    "test:integration": "cypress run",
+    "license": "ISC"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.137.0",
+    "aws-sdk": "^2.1183.0",
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "date-fns": "^2.29.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.0",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.5.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-s3": "^3.0.1",
+    "node-mailer": "^0.1.1",
+    "nodemailer": "^6.7.7",
+    "validator": "^13.7.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "resolutions": {
+    "@types/node": "12.12.53",
+    "lodash": ">=4.17.13"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/http-errors": "^1.8.2",
+    "@types/jest": "^28.1.6",
+    "@types/mongoose": "^5.11.97",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^18.6.1",
+    "@types/supertest": "^2.0.12",
+    "cypress": "^10.3.1",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "nodemon": "^2.0.19",
+    "prettier": "^2.7.1",
+    "pretty-quick": "^3.1.3",
+    "supertest": "^6.2.4",
+    "ts-jest": "^28.0.7",
+    "typescript": "^4.7.4"
+  }
+}
