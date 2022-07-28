@@ -11,7 +11,7 @@ router.get('/:productId', decodeUser, getSingleProduct);
 
 router.post('/addproduct',upload.single('image'), decodeUser, createProduct);
 
-router.get('/images/:key', decodeUser , getProductImage)
+router.get('/images/:key', getProductImage)
 
 
 module.exports = router;
