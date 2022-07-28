@@ -2,8 +2,6 @@ const Product = require("../models/products.model")
 const Comment = require("../models/comments.model")
 const User =  require("../models/users.model")
 const {sendMail} = require("../../utils")
-const { isConstructorDeclaration } = require("typescript")
-
 
 exports.createComment = async (req, res) => {
   try{
