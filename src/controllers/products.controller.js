@@ -74,7 +74,7 @@ exports.getProducts = async (req,res) => {
 exports.getSingleProduct = async (req,res) => {
   const {productId} = req.params
   try{
-    const product = await Product.findById(productId).populate({path:'comments',populate:{path:'user',path:'replies',populate:{path:"user"}} }).populate('user','reply')
+    const product = await Product.findById(productId).populate({path:'comments',populate:{path:"user replies.user"} }).populate('user','reply')
     return res.status(200).json({message:'product retrieved successfully',product})   
   }catch(err){
    console.log(err.message)
