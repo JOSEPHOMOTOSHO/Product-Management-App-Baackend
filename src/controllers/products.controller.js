@@ -53,12 +53,13 @@ exports.getProducts = async (req,res) => {
               { $geoNear: {
                 near: {type: 'Point', coordinates: user.location.coordinates},
                 distanceField: "distance",
+                distanceMultiplier: 0.001
               }},
               { $redact: {
                 $cond: {
                   if: { $lt: [ "$distance", "$radius" ] },
-                  then: '$$KEEP',
-                  else: '$$PRUNE'
+                  then: "$$KEEP",
+                  else: "$$PRUNE"
                   }
               }},
           ])

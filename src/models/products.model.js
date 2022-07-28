@@ -30,8 +30,7 @@ const ProductSchema = new Schema(
     },
 
     radius: {
-      trim: true,
-      type: String,
+      type: Number,
     },
 
     address: {
