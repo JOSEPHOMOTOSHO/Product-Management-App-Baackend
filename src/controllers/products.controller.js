@@ -44,7 +44,7 @@ exports.createProduct = async (req, res) => {
 };
 
 
-exports.getProduct = async (req,res) => {
+exports.getProducts = async (req,res) => {
        try{
         const user = await User.findOne({email:req.email})
         console.log(user)
@@ -69,4 +69,15 @@ exports.getProduct = async (req,res) => {
         console.log(err.message)
         throw new Error(err)
        }
+}
+
+exports.getSingleProduct = async (req,res) => {
+  const {productId} = req.params
+  try{
+    const product = await Product.findById(productId).populate({path:'comments',populate:{path:'user'} }).populate('user')
+    return res.status(200).json({message:'product retrieved successfully',product})   
+  }catch(err){
+   console.log(err.message)
+   throw new Error(err)
+  }
 }
