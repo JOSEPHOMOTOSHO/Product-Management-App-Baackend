@@ -21,7 +21,7 @@
  const http = require('http');
  const mongoose = require('mongoose');
 
- mongoose.connect(process.env.MONGO_URI,
+ mongoose.connect("mongodb+srv://OmotoshoJoseph:jnXzXDwshPE9Nk2d@cluster0.xnocl.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
