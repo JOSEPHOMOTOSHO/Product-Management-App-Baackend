@@ -8,8 +8,9 @@ const {sendMail} = require("../../utils")
 exports.createReply = async (req,res) => {
 const {commentId} = req.params;
 const {replyBody} = req.body;
-const comment = await Comment.findOne({ _id: commentId}).populate({ path: 'user', select: 'email' });
+const comment = await Comment.findOne({ _id: commentId}).populate('user replies');
 const user = await User.findOne({email:req.email})
+
 if(!comment){
     return res.status(400).json({message:"Comment doesn't exist"})
 }
