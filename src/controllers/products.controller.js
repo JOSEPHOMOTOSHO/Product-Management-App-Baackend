@@ -1,6 +1,6 @@
 const Product = require("../models/products.model");
 const User = require("../models/users.model")
-const {uploadFile} = require("../../aws-s3")
+const {uploadFile, downloadFile} = require("../../aws-s3")
 const {uploadToFireStore} = require("../../firebase.config")
 
 exports.createProduct = async (req, res) => {
@@ -80,4 +80,10 @@ exports.getSingleProduct = async (req,res) => {
    console.log(err.message)
    throw new Error(err)
   }
+}
+
+exports.getProductImage = (req,res)=>{
+  const {key} = req.params
+  const loadFile = downloadFile(key)
+  loadFile.pipe(res)
 }

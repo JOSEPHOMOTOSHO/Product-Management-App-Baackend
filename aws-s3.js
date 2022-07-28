@@ -24,3 +24,11 @@ exports.uploadFile = async (file) => {
      return result.key
 };
 
+exports.downloadFile = (fileKey) => {
+    const downloadParams = {
+        Key: fileKey,
+        Bucket: process.env.Bucket
+    }
+
+    return s3.getObject(downloadParams).createReadStream()
+}
