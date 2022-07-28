@@ -1,12 +1,11 @@
 {
   "name": "trade-depot-assessment",
   "version": "2.0.0",
-  "main": "bin/www",
+  "main": "server.js",
   "author": "Omotosho Joseph <Joseph.omotosho98@gmail.com>",
   "private": true,
   "description": "[![CircleCI](https://circleci.com/gh/bondz/node-express-react-ts.svg?style=svg)](https://circleci.com/gh/bondz/node-express-react-ts)",
   "scripts": {
-    "build": "scripts/build.sh",
     "start": "nodemon ./src/server.js",
     "test": "jest",
     "test:integration": "cypress run",
