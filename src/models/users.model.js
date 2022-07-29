@@ -97,9 +97,7 @@ userSchema.pre(/^find/, function (next) {
   next();
 });
 
-// Cascade delete subjects when a user is deleted
 userSchema.pre("remove", async function (next) {
-  //console.log(`Business being removed from user ${this._id}-${this.businessName}`);
   await this.model("user").deleteMany({ _id: this._id });
   next();
 });

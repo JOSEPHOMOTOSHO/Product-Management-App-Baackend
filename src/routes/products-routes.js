@@ -8,10 +8,11 @@ const {createProduct,getProducts,getSingleProduct,getProductImage} = require ('.
 // /* GET home page. */
 router.get('/getproducts', decodeUser, getProducts);
 router.get('/:productId', decodeUser, getSingleProduct);
+router.get('/images/:key', getProductImage)
 
 router.post('/addproduct',upload.single('image'), decodeUser, createProduct);
 
-router.get('/images/:key', getProductImage)
+
 
 
 module.exports = router;
