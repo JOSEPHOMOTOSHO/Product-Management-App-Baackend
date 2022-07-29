@@ -1,5 +1,4 @@
 const User = require("../models/users.model");
-const firebase = require("firebase-admin")
 const jwt = require('jsonwebtoken');
 
 exports.createUser  = async (req,res) =>  {
